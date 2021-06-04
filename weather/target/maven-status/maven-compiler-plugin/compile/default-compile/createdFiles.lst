@@ -1,0 +1,7 @@
+com/publicissapeint/assessment/dao/impl/WeatherDaoImpl.class
+com/publicissapeint/assessment/service/WeatherService.class
+com/publicissapeint/assessment/controller/WeatherController.class
+com/publicissapeint/assessment/model/Weather.class
+com/publicissapeint/assessment/WeatherForecastApplication.class
+com/publicissapeint/assessment/model/Temperature.class
+com/publicissapeint/assessment/dao/WeatherDao.class

@@ -1,0 +1,46 @@
+swagger: '2.0'
+info:
+  title: 'Publicis Saptient Assessement API Document'
+  description: 'API Specification of Weather'
+  version: '1'
+  contact:
+    name: Publicis Sapient Weather Support Operations
+    url: 'https://www.publicissapient.com/'
+host: publicissapient.com
+basePath: /weather
+schemes:
+  - https
+tags:
+  -
+    name: 'Weather Report'
+    description: 'API to get the 3 days high and low temperatures'
+
+paths:
+  /city/{cityName}:
+    get:
+      tags: [Weather Report]
+      summary: 'API to get 3 days high and low temperatures'
+      description: 'API to get 3 days high and low temperatures'
+      parameters: [{name: cityName, in: path, required: true, type: string, description: 'City Name'}]
+      produces: [application/json]
+      responses: {'200': {description: 'Response of 3 days high and low temperatures along with city name', schema: {$ref: '#/definitions/Weather'}}, '404': {description: Not Found}, }
+
+
+definitions:
+  Weather:
+    type: object
+    properties:
+      cityName: {type: string}
+      temperature:
+        type: array
+        items:
+          $ref: '#/definitions/Temperature'
+
+
+  Temperature:
+    type: object
+    properties:
+      maxTemp: {type: number}
+      minTemp: {type: number}
+      status: {type: string}
+      day: {type: number}

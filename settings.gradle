@@ -1,0 +1,4 @@
+rootProject.name = 'publicis sapient assessment'
+
+include 'book'
+include 'gateway'

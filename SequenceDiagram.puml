@@ -1,0 +1,22 @@
+*Weather Report*
+[plantuml, alt="Sequence diagram", width=600, height=150]
+----
+@startuml
+autonumber
+actor "User" as actor
+participant "Sapient Weather API" as swa
+participant "Sapient Weather Service" as sws
+participant "Open Weather Map " as owm
+
+actor -> swa: make a get call to Sapient Weather API
+note left: API Call begin
+swa -> sws: Business Logic to fetch Open weather map data
+sws -> owm: Get Call to Open Weather Map
+note left: API Call end
+
+owm -> sws:  Business Logic for manipulation Response
+sws -> swa: Response to API Controller
+swa [#blue]-> actor: Successful Fetched Weather Data response
+
+@enduml
+----
